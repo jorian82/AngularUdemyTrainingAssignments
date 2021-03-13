@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Assignment 3</h1>
+      <button class="btn btn-danger" (click)="onShowDetails()">Toggle Details</button>
+      <p *ngIf="showDetails">This is a hidden text</p>
+      <div
+          [ngStyle]="{backgroundColor: i > 3 ? 'blue' : 'transparent'}"
+          [ngClass]="{white: i > 3}"
+          *ngFor="let log of logs; let i = index">{{ log }}
+      </div>
+    </div>
+  </div>
+</div>

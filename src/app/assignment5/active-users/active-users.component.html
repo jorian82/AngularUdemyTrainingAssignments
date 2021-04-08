@@ -9,7 +9,7 @@
     </thead>
     <tr *ngFor="let user of users; let id = index">
       <td *ngIf="user.status === 'active'">{{ user.name }}</td>
-      <td *ngIf="user.status === 'active'"><a href="#" (click)="changeStatus(id)">{{ user.status }}</a></td>
+      <td *ngIf="user.status === 'active'"><a (click)="changeStatus(id)">{{ user.status }}</a></td>
     </tr>
   </table>
 </div>

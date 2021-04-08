@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -24,16 +23,12 @@ import { StatusCounter } from './services/status-counter.services';
 import { HeaderComponent } from './header/header.component';
 import { DropdownDirective } from './directives/dropdown.directive';
 import { HomeComponent } from './home/home.component';
+import { UserDetailsComponent } from './assignment5/user-details/user-details.component';
+import { CreateUserComponent } from './assignment5/create-user/create-user.component';
+import { UserEditComponent } from './assignment5/user-edit/user-edit.component';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'servers', component: ServersComponent },
-  { path: 'assignment1', component: Assignment1Component },
-  { path: 'assignment2', component: Assignment2Component },
-  { path: 'assignment3', component: Assignment3Component },
-  { path: 'assignment4', component: Assignment4Component },
-  { path: 'assignment5', component: Assignment5Component }
-]
+import { AppRoutingModule } from './app-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -54,13 +49,17 @@ const appRoutes: Routes = [
     ActiveUsersComponent,
     InactiveUsersComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    UserDetailsComponent,
+    UserEditComponent,
+    CreateUserComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [StatusCounter],
   bootstrap: [AppComponent]

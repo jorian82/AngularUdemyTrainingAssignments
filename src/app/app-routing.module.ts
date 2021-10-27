@@ -12,6 +12,8 @@ import { Assignment3Component } from './assignment3/assignment3.component';
 import { Assignment4Component } from './assignment4/assignment4.component';
 import { Assignment5Component } from './assignment5/assignment5.component';
 import { NotFoundComponent } from "./not-found/not-found.component";
+import { Assignment6Component } from "./assignment6/assignment6.component";
+import { Assignment7Component } from "./assignment7/assignment7.component";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +26,8 @@ const appRoutes: Routes = [
   { path: 'assignment5/:id', component: UserDetailsComponent },
   { path: 'assignment5/:id/edit', component: UserEditComponent },
   { path: 'assignment5/create', component: CreateUserComponent },
+  { path: 'assignment6', component: Assignment6Component },
+  { path: 'assignment7', component: Assignment7Component },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: '/not-found'}
 ]

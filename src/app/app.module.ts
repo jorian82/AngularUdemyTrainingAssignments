@@ -29,6 +29,9 @@ import { UserEditComponent } from './assignment5/user-edit/user-edit.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { Assignment6Component } from './assignment6/assignment6.component';
+import { ReactiveFormComponent } from './assignment6/reactive-form/reactive-form.component';
+import { Assignment7Component } from './assignment7/assignment7.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UserDetailsComponent,
     UserEditComponent,
     CreateUserComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    Assignment6Component,
+    ReactiveFormComponent,
+    Assignment7Component
   ],
   imports: [
     BrowserModule,

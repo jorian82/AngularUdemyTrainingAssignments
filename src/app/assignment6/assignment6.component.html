@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Assignment 6</h1>
+      <hr />
+      <form (ngSubmit)=onSubmit() #f="ngForm">
+        <span class="text-danger" *ngIf="!f.valid && f.touched">Please provide valid information</span>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+              type="email"
+              name="email"
+              id="email"
+              ngModel
+              email
+              class="form-control"
+              #email="ngModel"
+              required
+          />
+          <span class="text-danger" *ngIf="!email.valid && email.touched">Please enter a valid email address</span>
+        </div>
+        <div class="form-group">
+          <label for="subscription">Subscription</label>
+          <select
+              name="subscription"
+              id="subscription"
+              [ngModel]="subscriptionDefault"
+              class="form-control">
+            <option value="Basic">Basic</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Pro">Pro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+              type="password"
+              name="password"
+              id="password"
+              ngModel
+              password
+              class="form-control"
+              #psswd="ngModel"
+              required
+          />
+          <span class="text-danger" *ngIf="!psswd.valid && psswd.touched">Please provide a password</span>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!f.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <div class="row" *ngIf="formSubmitted">
+    <div class="col-md-12">
+      <pre>
+        Form values:
+        email: {{ formValues.email }}
+        password: {{ formValues.psswd }}
+        subscription: {{ formValues.subsc }}
+      </pre>
+    </div>
+  </div>
+</div>
+
